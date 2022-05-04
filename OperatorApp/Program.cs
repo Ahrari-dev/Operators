@@ -6,12 +6,6 @@ namespace OperatorExercise
     {
         static void Main(string[] args)
         {
-            //explicit typing -
-            string variableName = "Hello";
-
-            //inferred typing -
-            var varName = "Hello";
-
             var a = 17;
             var b = 4;
 
@@ -19,6 +13,21 @@ namespace OperatorExercise
             var mod = a % b;
 
             Console.WriteLine($"{a}/{b} is {div} remainder {mod}");
+
+            //Allow user to input the radius
+            Console.WriteLine("What is the radius of your circle?");
+            var radius = double.Parse(Console.ReadLine());
+
+            //Calclate area of circle
+            var areaOfCircle = CalculateArea(radius);
+
+            Console.WriteLine($"The area of a circle with radius of {radius} is {areaOfCircle}");
+
+        }
+        
+        public static double CalculateArea(double radius)
+        {
+            return Math.PI * (radius * radius);
         }
     }
 }
